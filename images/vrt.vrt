@@ -1,0 +1,64 @@
+<VRTDataset rasterXSize="7751" rasterYSize="7911">
+  <SRS>PROJCS["WGS 84 / UTM zone 11N",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0],UNIT["degree",0.0174532925199433],AUTHORITY["EPSG","4326"]],PROJECTION["Transverse_Mercator"],PARAMETER["latitude_of_origin",0],PARAMETER["central_meridian",-117],PARAMETER["scale_factor",0.9996],PARAMETER["false_easting",500000],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AUTHORITY["EPSG","32611"]]</SRS>
+  <GeoTransform> 2.5948500000000000e+005, 3.0000000000000000e+001, 0.0000000000000000e+000, 3.9489150000000000e+006, 0.0000000000000000e+000,-3.0000000000000000e+001</GeoTransform>
+  <VRTRasterBand dataType="Float32" band="1">
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">0.61645036935806</MDI>
+      <MDI key="STATISTICS_MEAN">0.089913735906374</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">0.069433471274326</MDI>
+    </Metadata>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">C:\GitHub\remoteSensing_qgis\images/LC80410362015107LGN00_converted/RT_LC80410362015107LGN00_B2.TIF</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="7751" RasterYSize="7911" DataType="Float32" BlockXSize="7751" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="7751" ySize="7911" />
+      <DstRect xOff="0" yOff="0" xSize="7751" ySize="7911" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="2">
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">0.65393799543381</MDI>
+      <MDI key="STATISTICS_MEAN">0.089032825031808</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">0.076580708591268</MDI>
+    </Metadata>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">C:\GitHub\remoteSensing_qgis\images/LC80410362015107LGN00_converted/RT_LC80410362015107LGN00_B3.TIF</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="7751" RasterYSize="7911" DataType="Float32" BlockXSize="7751" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="7751" ySize="7911" />
+      <DstRect xOff="0" yOff="0" xSize="7751" ySize="7911" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="3">
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">0.70658367872238</MDI>
+      <MDI key="STATISTICS_MEAN">0.098707856051578</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">0.094311766411288</MDI>
+    </Metadata>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">C:\GitHub\remoteSensing_qgis\images/LC80410362015107LGN00_converted/RT_LC80410362015107LGN00_B4.TIF</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="7751" RasterYSize="7911" DataType="Float32" BlockXSize="7751" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="7751" ySize="7911" />
+      <DstRect xOff="0" yOff="0" xSize="7751" ySize="7911" />
+    </SimpleSource>
+  </VRTRasterBand>
+  <VRTRasterBand dataType="Float32" band="4">
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">0.75580656528473</MDI>
+      <MDI key="STATISTICS_MEAN">0.16293250542259</MDI>
+      <MDI key="STATISTICS_MINIMUM">0</MDI>
+      <MDI key="STATISTICS_STDDEV">0.13903637652823</MDI>
+    </Metadata>
+    <SimpleSource>
+      <SourceFilename relativeToVRT="0">C:\GitHub\remoteSensing_qgis\images/LC80410362015107LGN00_converted/RT_LC80410362015107LGN00_B5.TIF</SourceFilename>
+      <SourceBand>1</SourceBand>
+      <SourceProperties RasterXSize="7751" RasterYSize="7911" DataType="Float32" BlockXSize="7751" BlockYSize="1" />
+      <SrcRect xOff="0" yOff="0" xSize="7751" ySize="7911" />
+      <DstRect xOff="0" yOff="0" xSize="7751" ySize="7911" />
+    </SimpleSource>
+  </VRTRasterBand>
+</VRTDataset>

@@ -1,0 +1,140 @@
+<!DOCTYPE html><html><head><title>Intro to Remote Sensing</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+body.combos{
+  height: 50%;
+  width: 50%;
+}
+
+</style><script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n];
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 10) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() {
+        go(++cur % (s.length));
+    };
+    document.onkeydown = function(e) {
+        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
+        (e.which === 37) && go(Math.max(0, --cur));
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+<div>Intro to <em>Remote Sensing</em></div>
+<div>Today we'll talk about <em>remote sensing</em>, what it can do, and how to do it</div>
+<div><em>DISCLAIMER:</em> I am not an expert</div>
+<div>So, what is Remote Sensing anyway?</div>
+<div>Use of aerial sensor technologies <em>(special cameras)</em> to detect and classify objects on Earth by means of propagated signals <em>(e.g. electromagnetic radiation)</em></div>
+<div><img src="images/classification.jpg"></div>
+<div><em>Visible light</em> is one type of electromagnetic radiation, other forms are <em>X-rays</em> and <em>Radio Waves.</em></div>
+<div>A brief history of Remote Sensing</div>
+<div>First, there was <em>aerial photography</em> (via balloons)</div>
+<div><img src="images/first-aerial-photo.jpg"></div>
+<div>Not useful for making maps</div>
+<div>Next came <em>planes</em> and <em>satellites</em> w/ sensors attached</div>
+<div><img src="images/plane_camera.jpg" /></div>
+<div><img src="images/landsat8.jpeg" /></div>
+<div>Satellites can capture more than just visible light</div>
+<div><img src="images/infrared.jpg">infrared!</div>
+<div><img src="images/thermal.jpg">thermal!</div>
+<div>Satellites are equipped with <em>bands</em> to measure electromagnetic waves</div>
+<div><img src="images/beatles_sat.jpg"></div>
+<div>Some bands measure <em>visible light,</em> and some measure <em>infrared</em></div>
+<div><img src="images/bands_wavelengths.png"></div>
+<div><em>Bands</em> can be combined into the RGB display on a monitor to show information that is <em>outside the spectrum of visible light</em></div>
+<div>resize browser for next slide</div>
+<div><img data-bodyclass="combos" src="images/band combos.gif"></div>
+<div><img data-bodyclass="combos" src="images/band_combos.jpg"></div>
+<div>Let's define some terms</div>
+<div><em>Spatial Resolution:</em> Size of a pixel that is recorded (1 px = 1 m)</div>
+<div><em>Spectral Resolution:</em> Wavelength width of each band (e.g. 0.10 to 0.11 μm per band)</div>
+<div><em>Temporal Resolution:</em> Frequency of flyovers (1 image every 30 days)</div>
+<div><em>LANDSAT 8:</em> <ul><li>30 meter resolution</li><li> 11 bands btwn 0.43-12.51 μm</li><li> 16 day temporal resolution</li></ul></div>
+<div>Each pixel has a <em>Digital Number</em> value (0-255)</div>
+<div>When 3 DNs combine on a RGB monitor, it displays a color</div>
+<div><em>Digital Numbers</em><ul><li>0,0,0 is black</li><li>255,255,255 is white</li></ul></div>
+<div>Areas of similar land cover emit similar electromagnetic waves</div>
+<div>and therefore have similar DN values</div>
+<div><img src="images/reflectance.gif" /></div>
+<div><em>Classification</em> is a technique used to categorize all pixels into land cover classes</div>
+<div><img src="images/classification.jpg"></div>
+<div><em>Two types of classification</em><ul><li>•Supervised Classification</li>  <li>•Unsupervised Classification</li></ul></div>
+<div>These techniques group pixels of <em>similar value</em> to show land use</div>
+<div><img src="images/classification.jpg"></div>
+<div><img src="images/classification2.jpg"></div>
+<div><em>Unsupervised Classification</em><ul><li>User specifies number of classes and pixels are automatically grouped into clusters of similar DN value</li></div>
+<div><em>Supervised Classification</em><ul><li>User selects representative samples for each land cover class, called <em>Training Sites</em></li></ul></div>
+<div>The computer uses <em>Training Sites</em> to classify every other pixel in the image</div>
+<div><img src="images/supervised_classification.png" /></div>
+<div><img src="images/supervised_classification2.png" /></div>
+<div><img src="images/rs_steps.jpg" /></div>
